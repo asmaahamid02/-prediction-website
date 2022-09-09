@@ -17,22 +17,22 @@ body {
 }
 
 .container {
-  /* height: 100%;
-  width: 100%; */
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   margin: 10vh 12vh;
 }
 
-.header {
-  width: 50%;
+.header,
+.main {
+  flex-grow: 1;
+  padding: 2vh 2.5vh;
+  border: solid;
 }
 
 .header h1 {
   color: #9932cc;
-  text-decoration: uppercase;
-  font-size: 4.5vh;
+  text-transform: uppercase;
+  font-size: 4vh;
   margin-bottom: 3vh;
   text-align: center;
   padding: 1.2vh 2vh;
@@ -40,23 +40,17 @@ body {
 }
 
 .header img {
-  width: 100%;
+  min-width: 500px;
   max-width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
-.main {
-  width: 50%;
-  align-self: center;
-  margin-left: 10vh;
-}
-
-.main-section {
-  margin-bottom: 10vh;
+/* .main-section {
+  margin-bottom: 5vh;
   padding-left: 5vh;
 }
 
 .section-header {
   margin-bottom: 8vh;
-}
+} */
