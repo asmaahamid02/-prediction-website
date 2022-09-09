@@ -1,1 +1,50 @@
 /* Css Reset */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  color: #333;
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap row;
+}
+
+.container {
+  /* height: 100%;
+  width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 10vh 12vh;
+}
+
+.header {
+  width: 50%;
+}
+
+.main {
+  width: 50%;
+  align-self: center;
+  margin-left: 10vh;
+}
+
+.header img {
+  max-width: 400px;
+  height: auto;
+}
+
+.main-section {
+  margin-bottom: 10vh;
+  padding-left: 5vh;
+}
+
+.section-header {
+  margin-bottom: 8vh;
+}
