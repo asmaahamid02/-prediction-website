@@ -19,7 +19,7 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-  margin: 10vh 12vh;
+  margin: 5vh 6vh;
 }
 
 .header,
@@ -33,15 +33,13 @@ body {
   color: #9932cc;
   text-transform: uppercase;
   font-size: 4vh;
-  margin-bottom: 3vh;
   text-align: center;
   padding: 1.2vh 2vh;
   line-height: 1.5;
 }
 
 .header img {
-  min-width: 500px;
-  max-width: 100%;
+  max-width: 50vh;
   height: auto;
   border-radius: 5px;
 }
