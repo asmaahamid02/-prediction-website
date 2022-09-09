@@ -29,15 +29,27 @@ body {
   width: 50%;
 }
 
+.header h1 {
+  color: #9932cc;
+  text-decoration: uppercase;
+  font-size: 4.5vh;
+  margin-bottom: 3vh;
+  text-align: center;
+  padding: 1.2vh 2vh;
+  line-height: 1.5;
+}
+
+.header img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
 .main {
   width: 50%;
   align-self: center;
   margin-left: 10vh;
-}
-
-.header img {
-  max-width: 400px;
-  height: auto;
 }
 
 .main-section {
