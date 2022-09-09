@@ -29,10 +29,18 @@ body {
   border: solid;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap column;
+}
+
 .header h1 {
   color: #9932cc;
   text-transform: uppercase;
   font-size: 4vh;
+  font-weight: bolder;
   text-align: center;
   padding: 1.2vh 2vh;
   line-height: 1.5;
@@ -44,6 +52,70 @@ body {
   border-radius: 5px;
 }
 
+.main-section {
+  padding: 1.2vh 2vh;
+}
+
+.section-header {
+  margin-bottom: 10px;
+}
+
+.section-header h3 {
+  font-size: 3vh;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #9932cc;
+}
+
+.section-content {
+  margin-bottom: 10px;
+}
+
+.inputs-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: wrap row;
+}
+
+.input-field {
+  flex: 1;
+}
+
+.inputs-wrapper > .input-field:last-child {
+  margin-left: 10px;
+  align-self: center;
+}
+
+.input-field > label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 2vh;
+}
+
+.form-input {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn {
+  padding: 8px 10px;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-color {
+  background-color: #9932cc;
+  color: #eee;
+}
+
+.btn-color:hover {
+  background-color: transparent;
+  color: #9932cc;
+  border: 1px solid #9932cc;
+}
 /* .main-section {
   margin-bottom: 5vh;
   padding-left: 5vh;
@@ -51,4 +123,4 @@ body {
 
 .section-header {
   margin-bottom: 8vh;
-} */
+} */ ;
