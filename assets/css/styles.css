@@ -11,29 +11,33 @@ body {
   color: #333;
   background-color: #eee;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-flow: wrap row;
 }
 
 .container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin: 5vh 6vh;
 }
 
-.header,
+/* .header, */
 .main {
   flex-grow: 1;
-  padding: 2vh 2.5vh;
-  border: solid;
+  /* padding: 2vh 2.5vh; */
+  /* border: solid; */
 }
 
 .header {
+  padding: 2vh 2.5vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-flow: wrap column;
+  border-right: 0.5px solid rgb(153, 50, 204, 0.2);
+  border-radius: 5px;
 }
 
 .header h1 {
@@ -42,7 +46,7 @@ body {
   font-size: 4vh;
   font-weight: bolder;
   text-align: center;
-  padding: 1.2vh 2vh;
+  padding: 2vh;
   line-height: 1.5;
 }
 
@@ -69,6 +73,8 @@ body {
 
 .section-content {
   margin-bottom: 10px;
+  display: flex;
+  flex-flow: wrap column;
 }
 
 .inputs-wrapper {
@@ -79,11 +85,12 @@ body {
 
 .input-field {
   flex: 1;
+  margin-right: 10px;
 }
 
 .inputs-wrapper > .input-field:last-child {
-  margin-left: 10px;
-  align-self: center;
+  align-self: flex-end;
+  margin-right: none;
 }
 
 .input-field > label {
@@ -96,14 +103,16 @@ body {
   padding: 8px 10px;
   border: none;
   border-radius: 5px;
+  width: 100%;
 }
 
 .btn {
-  padding: 8px 10px;
+  padding: 8px 20px;
   border-radius: 8px;
-  width: 100%;
+  /* width: 50%; */
   border: none;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 .btn-color {
@@ -116,11 +125,27 @@ body {
   color: #9932cc;
   border: 1px solid #9932cc;
 }
-/* .main-section {
-  margin-bottom: 5vh;
-  padding-left: 5vh;
+
+.info-list {
+  padding-left: 4vh;
+  list-style-type: disclosure-closed;
+  color: #9932cc;
 }
 
-.section-header {
-  margin-bottom: 8vh;
-} */ ;
+.info-list > .list-item {
+  padding: 8px 0;
+  width: 100%;
+}
+
+.list-item > h5 {
+  color: #9932cc;
+  font-size: 2vh;
+}
+
+.list-item > p {
+  color: #333;
+  font-size: 2vh;
+  margin: 5px 0 0 5px;
+  padding-bottom: 8px;
+  border-bottom: 0.5px solid rgb(153, 50, 204, 0.2);
+}
