@@ -130,22 +130,27 @@ body {
   padding-left: 4vh;
   list-style-type: disclosure-closed;
   color: #9932cc;
+  width: 100%;
 }
 
 .info-list > .list-item {
   padding: 8px 0;
-  width: 100%;
+  width: 50%;
 }
 
-.list-item > h5 {
+.info-title {
   color: #9932cc;
   font-size: 2vh;
 }
 
-.list-item > p {
+.info-content {
   color: #333;
   font-size: 2vh;
   margin: 5px 0 0 5px;
   padding-bottom: 8px;
   border-bottom: 0.5px solid rgb(153, 50, 204, 0.2);
+}
+
+.info-list > .list-item:last-child .info-content {
+  border-bottom: none;
 }
