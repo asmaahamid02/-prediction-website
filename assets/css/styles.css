@@ -77,6 +77,10 @@ body {
   flex-flow: wrap column;
 }
 
+.main > .main-section:last-child {
+  display: none;
+}
+
 .inputs-wrapper {
   display: flex;
   justify-content: flex-start;
