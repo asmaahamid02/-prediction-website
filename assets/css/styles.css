@@ -16,6 +16,7 @@ body {
   flex-flow: wrap row;
 }
 
+/* CSS Utilities */
 .container {
   width: 100%;
   display: flex;
@@ -23,13 +24,29 @@ body {
   margin: 5vh 6vh;
 }
 
-/* .header, */
-.main {
-  flex-grow: 1;
-  /* padding: 2vh 2.5vh; */
-  /* border: solid; */
+.hidden-wrapper {
+  margin-top: 5px;
+  display: none;
 }
 
+.error-message {
+  color: #ff0000;
+  font-size: 2vh;
+}
+
+.error {
+  border: 1px solid #ff0000;
+}
+
+.btn {
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+/* Header */
 .header {
   padding: 2vh 2.5vh;
   display: flex;
@@ -56,6 +73,12 @@ body {
   border-radius: 5px;
 }
 
+/* Main */
+.main {
+  flex-grow: 1;
+}
+
+/* Section */
 .main-section {
   padding: 1.2vh 2vh;
 }
@@ -81,6 +104,7 @@ body {
   display: none;
 }
 
+/* Form */
 .inputs-wrapper {
   display: flex;
   justify-content: flex-start;
@@ -97,15 +121,6 @@ body {
   margin-right: none;
 }
 
-.hidden-wrapper {
-  margin-top: 5px;
-  display: none;
-}
-
-.error-message {
-  color: #ff0000;
-  font-size: 2vh;
-}
 .input-field > label {
   display: block;
   margin-bottom: 8px;
@@ -119,19 +134,6 @@ body {
   width: 100%;
 }
 
-.error {
-  border: 1px solid #ff0000;
-}
-
-.btn {
-  padding: 8px 20px;
-  border-radius: 8px;
-  /* width: 50%; */
-  border: none;
-  cursor: pointer;
-  margin-top: 5px;
-}
-
 .btn-color {
   background-color: #a52a2a;
   color: #eee;
@@ -143,6 +145,7 @@ body {
   border: 1px solid #a52a2a;
 }
 
+/* User Info Section*/
 .info-list {
   padding-left: 4vh;
   list-style-type: disclosure-closed;
