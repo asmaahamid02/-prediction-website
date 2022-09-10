@@ -1,11 +1,12 @@
 /* JavaScript */
 window.addEventListener('load', () => {
-  const username_input = document.querySelector('#username').value
+  const username_input = document.querySelector('#username')
   const image = document.querySelector('#dog-img')
-  const username = document.querySelector('#js-username')
-  const gender = document.querySelector('#gender')
-  const age = document.querySelector('#age')
-  const nationality = document.querySelector('#nationality')
+  const name_form = document.querySelector('#name-form')
+  const username_placeholder = document.querySelector('#js-username')
+  const gender_placeholder = document.querySelector('#gender')
+  const age_placeholder = document.querySelector('#age')
+  const nationality_placeholder = document.querySelector('#nationality')
 
   const dog_images_api = 'https://dog.ceo/api/breeds/image/random/'
   const gender_api = 'https://api.genderize.io?name='
@@ -26,9 +27,42 @@ window.addEventListener('load', () => {
     }
   }
 
+  function isEmpty(str) {
+    return !str.trim().length
+  }
   //fill the header image with random dog image from api
   fetchApi(dog_images_api, 1).then((data) => {
     //fetching JSON object
     image.src = data.message
   })
+
+  name_form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    let username = username_input.value
+    if (isEmpty(username)) {
+      console.log('empty')
+    }
+    username_placeholder.textContent = username
+
+    fetchApi(gender_api, username).then((data) => {
+      age_placeholder.textContent = data.gender
+    })
+
+    fetchApi(age_api, username).then((data) => {
+      gender_placeholder.textContent = data.age
+    })
+
+    fetchApi(nationality_api, username).then((data) => {
+      nationality_placeholder.textContent =
+        data.country[0]['country_id'] + ' - ' + data.country[1]['country_id']
+    })
+    console.log(gender)
+  })
+
+  //   //fill the header image with random dog image from api
+  //   fetchApi(dog_images_api, 1).then((data) => {
+  //     //fetching JSON object
+  //     image.src = data.message
+  //   })
 })
