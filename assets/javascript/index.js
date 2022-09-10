@@ -30,39 +30,29 @@ window.addEventListener('load', () => {
   function isEmpty(str) {
     return !str.trim().length
   }
+
   //fill the header image with random dog image from api
   fetchApi(dog_images_api, 1).then((data) => {
     //fetching JSON object
     image.src = data.message
   })
 
-  name_form.addEventListener('submit', (e) => {
+  name_form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
     let username = username_input.value
     if (isEmpty(username)) {
       console.log('empty')
     }
+
+    gender = await fetchApi(gender_api, username)
+    console.log(username)
+    age = await fetchApi(age_api, username)
+    nationality = await fetchApi(nationality_api, username)
+
     username_placeholder.textContent = username
-
-    fetchApi(gender_api, username).then((data) => {
-      age_placeholder.textContent = data.gender
-    })
-
-    fetchApi(age_api, username).then((data) => {
-      gender_placeholder.textContent = data.age
-    })
-
-    fetchApi(nationality_api, username).then((data) => {
-      nationality_placeholder.textContent =
-        data.country[0]['country_id'] + ' - ' + data.country[1]['country_id']
-    })
-    console.log(gender)
+    gender_placeholder.textContent = gender.gender
+    age_placeholder.textContent = age.age
+    nationality_placeholder.textContent = `${nationality.country[0]['country_id']} - ${nationality.country[1]['country_id']}`
   })
-
-  //   //fill the header image with random dog image from api
-  //   fetchApi(dog_images_api, 1).then((data) => {
-  //     //fetching JSON object
-  //     image.src = data.message
-  //   })
 })
