@@ -5,6 +5,7 @@ window.addEventListener('load', async () => {
   const image = document.querySelector('#dog-img')
   const name_form = document.querySelector('#name-form')
   const hidden_wrapper = document.querySelector('.hidden-wrapper')
+  const user_data = document.querySelector('#user-data')
   const username_placeholder = document.querySelector('#js-username')
   const gender_placeholder = document.querySelector('#gender')
   const age_placeholder = document.querySelector('#age')
@@ -42,6 +43,9 @@ window.addEventListener('load', async () => {
 
   //remove error mwssage and border upon typing
   username_input.addEventListener('input', () => {
+    if (isEmpty(username_input.value)) {
+      user_data.style.display = 'none'
+    }
     username_input.classList.remove('error')
     hidden_wrapper.style.display = 'none'
   })
@@ -50,8 +54,8 @@ window.addEventListener('load', async () => {
   name_form.addEventListener('submit', async (e) => {
     e.preventDefault()
 
-    //check if the name id empty
     let username = username_input.value
+    //check if the name id empty
     if (isEmpty(username)) {
       username_input.classList.add('error')
       hidden_wrapper.style.display = 'block'
@@ -59,15 +63,16 @@ window.addEventListener('load', async () => {
     }
 
     //get user information from API
-    gender = await fetchApi(gender_api, username)
-    console.log(username)
-    age = await fetchApi(age_api, username)
-    nationality = await fetchApi(nationality_api, username)
+    let gender = await fetchApi(gender_api, username)
+    let age = await fetchApi(age_api, username)
+    let nationality = await fetchApi(nationality_api, username)
 
     //fill the HTML containers with data
     username_placeholder.textContent = username
     gender_placeholder.textContent = gender.gender
     age_placeholder.textContent = age.age
     nationality_placeholder.textContent = `${nationality.country[0]['country_id']} - ${nationality.country[1]['country_id']}`
+
+    user_data.style.display = 'block'
   })
 })
