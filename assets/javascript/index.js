@@ -17,10 +17,13 @@ window.addEventListener('load', async () => {
   const age_api = 'https://api.agify.io/?name='
   const nationality_api = 'https://api.nationalize.io/?name='
 
+  const rand_images_num = Math.floor(Math.random() * 30)
+  const rand_img_index = Math.floor(Math.random() * rand_images_num)
+
   //fill the header image with random dog image from api
-  await fetchApi(dog_images_api, 1).then((data) => {
+  await fetchApi(dog_images_api, rand_images_num).then((data) => {
     //fetching JSON object
-    image.src = data.message
+    image.src = data.message[rand_img_index]
   })
 
   function isEmpty(str) {
