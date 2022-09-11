@@ -9,15 +9,40 @@
 }
 
 .signup {
-  border: 2px solid rgb(13, 107, 189);
   width: 400px;
   padding: 14px 40px;
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rfb(92, 99, 105, 0.2);
+  box-shadow: 0 10px 25px rgb(92, 99, 105, 0.2);
 }
 
 .title {
   font-size: 50px;
   margin-bottom: 50px;
+}
+
+.input-container {
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #dbdde1;
+  border-radius: 7px;
+  outline: none;
+  padding: 0 20px;
+  font-size: 16px;
+  background: none;
+  z-index: 1;
+}
+
+::placeholder {
+  color: transparent;
 }
