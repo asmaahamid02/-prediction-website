@@ -72,6 +72,14 @@
   border: 2px solid #a52a2a;
 }
 
+.input:not(:placeholder-shown) + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .submit-btn {
   display: block;
   margin-left: auto;
@@ -87,7 +95,5 @@
 
 .submit-btn:hover {
   background-color: rgb(165, 42, 42, 0.8);
-  /* color: #a52a2a; */
-  /* border: 1px solid #a52a2a; */
   transform: translateY(-2px);
 }
