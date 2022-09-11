@@ -175,6 +175,16 @@ body {
   border-bottom: none;
 }
 
+.bored {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bored > h4 {
+  margin-right: 30px;
+}
+
 /* Media Query */
 
 @media only screen and (max-width: 910px) {
