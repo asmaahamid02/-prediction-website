@@ -10,6 +10,7 @@ window.addEventListener('load', async () => {
   const gender_placeholder = document.querySelector('#gender')
   const age_placeholder = document.querySelector('#age')
   const nationality_placeholder = document.querySelector('#nationality')
+  const header_title = document.querySelector('#header-title')
 
   //APIs URLs
   const dog_images_api = 'https://dog.ceo/api/breeds/image/random/'
