@@ -10,6 +10,12 @@ window.addEventListener('load', async () => {
   const gender_placeholder = document.querySelector('#gender')
   const age_placeholder = document.querySelector('#age')
   const nationality_placeholder = document.querySelector('#nationality')
+  const header_title = document.querySelector('#header-title')
+  const bored_btn = document.querySelector('#bored-btn')
+  const reset_bored_btn = document.querySelector('#reset-bored-btn')
+  const activity = document.querySelector('#activity')
+  const target = document.querySelector('#target')
+  const bored_content = document.querySelector('.bored-content')
 
   //APIs URLs
   const dog_images_api = 'https://dog.ceo/api/breeds/image/random/'
@@ -20,6 +26,19 @@ window.addEventListener('load', async () => {
   const rand_images_num = Math.floor(Math.random() * 30)
   const rand_img_index = Math.floor(Math.random() * rand_images_num)
 
+  //fetch ip address from api using API
+  axios
+    .get('https://api.ipify.org/?format=json', {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+    .then(
+      (result) =>
+        (header_title.textContent = `Let's Start - Your IP: ${result.data.ip}`)
+    )
+    .catch((error) => console.log(error))
   //fill the header image with random dog image from api
   await fetchApi(dog_images_api, rand_images_num).then((data) => {
     //fetching JSON object
@@ -77,5 +96,29 @@ window.addEventListener('load', async () => {
     nationality_placeholder.textContent = `${nationality.country[0]['country_id']} - ${nationality.country[1]['country_id']}`
 
     user_data.style.display = 'block'
+  })
+
+  bored_btn.addEventListener('click', () => {
+    axios
+      .get('https://www.boredapi.com/api/activity', {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      })
+      .then(
+        (result) => {
+          activity.textContent = `${result.data.activity}`
+          target.textContent = `${result.data.type}`
+
+          bored_content.style.display = 'block'
+        }
+        // console.log(result.data)
+      )
+      .catch((error) => console.log(error))
+  })
+
+  reset_bored_btn.addEventListener('click', () => {
+    bored_content.style.display = 'none'
   })
 })

@@ -23,7 +23,7 @@
             <!-- Start Form Section-->
             <section class="main-section">
                 <div class="section-header">
-                    <h3>Let's start</h3>
+                    <h4 id="header-title">Let's start</h4>
                 </div>
                 <div class="section-content">
                     <form action="" id="name-form">
@@ -43,10 +43,31 @@
                 </div>
             </section>
             <!-- End Form Section-->
+            <!-- Start activity Section-->
+            <section class="main-section">
+                <div class="section-header bored">
+                    <h4>Are you bored?</h4>
+                    <button class="btn btn-color" id="bored-btn">Bored :(</button>
+                    <button class="btn btn-color" id="reset-bored-btn">Reset</button>
+                </div>
+                <div class="section-content bored-content">
+                    <ul class="info-list">
+                        <li class="list-item">
+                            <h5 class="info-title">Activity</h5>
+                            <p class="info-content" id="activity">Give your pet ten minutes of focused attention</p>
+                        </li>
+                        <li class="list-item">
+                            <h5 class="info-title">Target</h5>
+                            <p class="info-content" id="target">relaxation</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- End activity Section-->
             <!-- Start Info Section-->
             <section class="main-section" id="user-data">
                 <div class="section-header">
-                    <h3>Here your information</h3>
+                    <h4>Here your information</h4>
                 </div>
                 <div class="section-content">
                     <ul class="info-list">
@@ -78,6 +99,7 @@
     </div>
 
     <!-- Link Js to Html-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
     <script src="./assets/javascript/index.js" type="application/javascript">
     </script>
 </body>
