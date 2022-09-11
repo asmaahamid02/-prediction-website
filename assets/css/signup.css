@@ -97,3 +97,21 @@
   background-color: rgb(165, 42, 42, 0.8);
   transform: translateY(-2px);
 }
+
+@media only screen and (max-width: 400px) {
+  .title {
+    font-size: 35px;
+  }
+  .submit-btn {
+    font-size: 14px;
+    width: 100%;
+  }
+  .label {
+    font-size: 13px;
+  }
+
+  .input:focus + .label,
+  .input:not(:placeholder-shown) + .label {
+    font-size: 12px;
+  }
+}
