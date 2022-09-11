@@ -10,10 +10,10 @@ body {
   font-family: 'Courier New', Courier, monospace;
   color: #333;
   background-color: #eee;
-  display: flex;
+  /* display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-flow: wrap row;
+  flex-flow: wrap row; */
 }
 
 /* CSS Utilities */
