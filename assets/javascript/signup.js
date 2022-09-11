@@ -28,6 +28,13 @@ window.addEventListener('load', () => {
       return
     }
 
-    console.log('success')
+    let user = {
+      username: username.value,
+      password: password.value,
+    }
+
+    localStorage.clear()
+    localStorage.setItem('user', JSON.stringify(user))
+    window.location.replace('./login.html')
   })
 })
