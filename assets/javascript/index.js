@@ -12,8 +12,10 @@ window.addEventListener('load', async () => {
   const nationality_placeholder = document.querySelector('#nationality')
   const header_title = document.querySelector('#header-title')
   const bored_btn = document.querySelector('#bored-btn')
+  const reset_bored_btn = document.querySelector('#reset-bored-btn')
   const activity = document.querySelector('#activity')
   const target = document.querySelector('#target')
+  const bored_content = document.querySelector('.bored-content')
 
   //APIs URLs
   const dog_images_api = 'https://dog.ceo/api/breeds/image/random/'
@@ -108,9 +110,15 @@ window.addEventListener('load', async () => {
         (result) => {
           activity.textContent = `${result.data.activity}`
           target.textContent = `${result.data.type}`
+
+          bored_content.style.display = 'block'
         }
         // console.log(result.data)
       )
       .catch((error) => console.log(error))
+  })
+
+  reset_bored_btn.addEventListener('click', () => {
+    bored_content.style.display = 'none'
   })
 })
