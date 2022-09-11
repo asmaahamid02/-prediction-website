@@ -59,6 +59,19 @@
   z-index: 0;
 }
 
+.input:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  color: #a52a2a;
+  font-weight: 600;
+}
+
+.input:focus {
+  border: 2px solid #a52a2a;
+}
+
 .submit-btn {
   display: block;
   margin-left: auto;
