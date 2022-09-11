@@ -21,6 +21,18 @@ window.addEventListener('load', async () => {
   const rand_images_num = Math.floor(Math.random() * 30)
   const rand_img_index = Math.floor(Math.random() * rand_images_num)
 
+  axios
+    .get('https://api.ipify.org/?format=json', {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+    .then(
+      (result) =>
+        (header_title.textContent = `Let's Start - Your IP: ${result.data.ip}`)
+    )
+    .catch((error) => console.log(error))
   //fill the header image with random dog image from api
   await fetchApi(dog_images_api, rand_images_num).then((data) => {
     //fetching JSON object
