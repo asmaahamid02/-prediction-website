@@ -58,3 +58,23 @@
   transition: 0.5s;
   z-index: 0;
 }
+
+.submit-btn {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color: #a52a2a;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(165, 42, 42, 0.8);
+  /* color: #a52a2a; */
+  /* border: 1px solid #a52a2a; */
+  transform: translateY(-2px);
+}
